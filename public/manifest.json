@@ -1,6 +1,6 @@
 {
-  "name": "API 使用 demo",
-  "short_name": "API demo",
+  "name": "Deep Chat",
+  "short_name": "Deep Chat",
   "description": "基于 DeepSeek API 的静态聊天示例。",
   "lang": "zh-CN",
   "start_url": "./",
