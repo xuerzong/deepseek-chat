@@ -1,4 +1,4 @@
-import { BackupError, fail } from './errors.js'
+import { BackupError, fail } from './errors'
 import {
   EXPORT_FORMAT_VERSION,
   type ChatMessage,
@@ -7,7 +7,7 @@ import {
   type SearchResult,
   type SessionFile,
   type SessionIndexEntry,
-} from './format.js'
+} from './format'
 
 /**
  * 按格式定义校验，返回只含已定义字段的新对象：容器与元数据严格校验，无法解析的内容片段丢弃。

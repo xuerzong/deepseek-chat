@@ -1,7 +1,7 @@
-import { getRegionName, provinces, type UserLocation } from '../location.js'
-import type { Locale } from '../settings.js'
-import { formatDate } from '../../utils/format.js'
-import { translate } from '../../i18n/index.js'
+import { getRegionName, provinces, type UserLocation } from '../location'
+import type { Locale } from '../settings'
+import { formatDate } from '../../utils/format'
+import { translate } from '../../i18n/index'
 
 const locationName = (location: UserLocation | null, locale: Locale): string => {
   if (!location) {

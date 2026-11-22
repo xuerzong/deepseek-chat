@@ -1,10 +1,10 @@
 import clsx from 'clsx'
-import { useIsMobile } from '../../app/viewport.js'
-import { useTranslate } from '../../i18n/index.js'
-import type { Session } from '../../services/chat/types.js'
-import { ChatInput } from '../chatInput/ChatInput.js'
-import { MessageList } from '../messages/MessageList.js'
-import { MobileHeader } from './MobileHeader.js'
+import { useIsMobile } from '../../app/viewport'
+import { useTranslate } from '../../i18n/index'
+import type { Session } from '../../services/chat/types'
+import { ChatInput } from '../chatInput/ChatInput'
+import { MessageList } from '../messages/MessageList'
+import { MobileHeader } from './MobileHeader'
 import styles from './SessionView.module.css'
 
 /** 会话页：标题栏（移动端为顶栏）+ 消息列表，输入框吸底 */

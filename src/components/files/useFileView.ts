@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { getFileViewType, isImage } from '../../services/attachments.js'
-import { loadFile } from '../../services/chat/db.js'
+import { getFileViewType, isImage } from '../../services/attachments'
+import { loadFile } from '../../services/chat/db'
 
 const createViewUrl = (original: Blob, type: string) => {
   const blob = original.slice(0, original.size, type || 'application/octet-stream')

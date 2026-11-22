@@ -1,9 +1,4 @@
-import type {
-  ContentBlockDelta,
-  MessageStreamEvent,
-  OutputBlockStart,
-  TextCitation,
-} from './types.js'
+import type { ContentBlockDelta, MessageStreamEvent, OutputBlockStart, TextCitation } from './types'
 
 const isRecord = (value: unknown): value is Record<string, unknown> =>
   value !== null && typeof value === 'object' && !Array.isArray(value)

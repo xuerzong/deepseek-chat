@@ -1,13 +1,13 @@
-import { translate } from '../../i18n/index.js'
-import { isWebUrl } from '../../utils/url.js'
+import { translate } from '../../i18n/index'
+import { isWebUrl } from '../../utils/url'
 import type {
   ServerToolKind,
   TextCitation,
   WebFetchToolResultBlock,
   WebSearchResult,
   WebSearchToolResultBlock,
-} from '../api/types.js'
-import type { AssistantMessage, ThinkingPart } from './types.js'
+} from '../api/types'
+import type { AssistantMessage, ThinkingPart } from './types'
 
 /**
  * 由回复的内容块推导界面需要的结构：思考与工具步骤的时间线、带引用角标的正文、可引用的来源列表。

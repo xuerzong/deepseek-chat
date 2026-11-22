@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { IconEditOutline16 } from '../base/icons.js'
-import { useSettings } from '../../services/settings.js'
-import { useIsMobile } from '../../app/viewport.js'
-import { IconButton } from '../base/IconButton.js'
-import { useApiKeyForm } from './useApiKeyForm.js'
-import { useTranslate } from '../../i18n/index.js'
+import { IconEditOutline16 } from '../base/icons'
+import { useSettings } from '../../services/settings'
+import { useIsMobile } from '../../app/viewport'
+import { IconButton } from '../base/IconButton'
+import { useApiKeyForm } from './useApiKeyForm'
+import { useTranslate } from '../../i18n/index'
 import styles from './Settings.module.css'
 
 /** API Key 的编辑状态：输入框与移动端底部的「确定」按钮共用 */

@@ -1,19 +1,19 @@
-import { translate, type TranslationMessage } from '../../i18n/index.js'
-import { resizeUploadImage } from '../../utils/resizeUploadImage.js'
-import { readMessageEvent } from './parseEvent.js'
-import { readServerSentEvents } from './sse.js'
+import { translate, type TranslationMessage } from '../../i18n/index'
+import { useSettings } from '../settings'
+import { resizeUploadImage } from '../../utils/resizeUploadImage'
+import { readMessageEvent } from './parseEvent'
+import { readServerSentEvents } from './sse'
 import type {
   ApiErrorBody,
   CreateMessageRequest,
   FileObject,
   FilePurpose,
   MessageStreamEvent,
-} from './types.js'
+} from './types'
 
-/** 构建期 API 地址，默认 https://api.deepseek.com；本地开发支持开发服务器代理 */
-export const API_ORIGIN = __API_ORIGIN__
+export const getApiOrigin = (): string => useSettings.getState().baseURL ?? __API_ORIGIN__
 /** Anthropic 兼容接口的前缀 */
-const ANTHROPIC_BASE_URL = `${API_ORIGIN}/anthropic/v1`
+const anthropicBaseURL = () => `${getApiOrigin()}/anthropic/v1`
 /** 引用 Files API 上传的图片、调用 Anthropic 兼容 Files API 时必须携带 */
 const FILES_BETA = 'files-api-2025-04-14'
 
@@ -92,7 +92,7 @@ const anthropicHeaders = (apiKey: string, beta: boolean): Record<string, string>
 
 /** 用 GET /models 校验 API Key（不产生费用） */
 export const verifyApiKey = async (apiKey: string, signal?: AbortSignal): Promise<void> => {
-  await request(`${API_ORIGIN}/models`, {
+  await request(`${getApiOrigin()}/models`, {
     method: 'GET',
     headers: { Authorization: `Bearer ${apiKey}` },
     signal,
@@ -114,7 +114,7 @@ export const uploadFile = async (
     form.append('purpose', purpose)
   }
   form.append('file', purpose === null ? await resizeUploadImage(file, signal) : file)
-  const response = await request(`${ANTHROPIC_BASE_URL}/files`, {
+  const response = await request(`${anthropicBaseURL()}/files`, {
     method: 'POST',
     headers: anthropicHeaders(apiKey, true),
     body: form,
@@ -125,7 +125,7 @@ export const uploadFile = async (
 
 /** DELETE /anthropic/v1/files/{file_id} */
 export const deleteFile = async (apiKey: string, fileId: string): Promise<void> => {
-  await request(`${ANTHROPIC_BASE_URL}/files/${encodeURIComponent(fileId)}`, {
+  await request(`${anthropicBaseURL()}/files/${encodeURIComponent(fileId)}`, {
     method: 'DELETE',
     headers: anthropicHeaders(apiKey, true),
   })
@@ -147,7 +147,7 @@ export async function* streamMessage(
   body: CreateMessageRequest,
   signal: AbortSignal
 ): AsyncGenerator<MessageStreamEvent> {
-  const response = await request(`${ANTHROPIC_BASE_URL}/messages`, {
+  const response = await request(`${anthropicBaseURL()}/messages`, {
     method: 'POST',
     headers: {
       ...anthropicHeaders(apiKey, hasFile(body)),

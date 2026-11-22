@@ -1,5 +1,5 @@
 import { memo, useEffect, useMemo, useRef, useState } from 'react'
-import { ensureKatex, type Katex } from '../../services/markdown/katex.js'
+import { ensureKatex, type Katex } from '../../services/markdown/katex'
 
 /** renderToString 外层包裹的标签，组件自己渲染外层，这里切掉 */
 const KATEX_WRAPPER = {

@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import type { TranslationMessage } from '../../i18n/index.js'
-import { transcribe } from '../../services/api/speech.js'
-import { startRecording, type Recording } from '../../services/speech/recorder.js'
-import { useSettings } from '../../services/settings.js'
-import { showToast } from '../base/toastState.js'
+import type { TranslationMessage } from '../../i18n/index'
+import { transcribe } from '../../services/api/speech'
+import { startRecording, type Recording } from '../../services/speech/recorder'
+import { useSettings } from '../../services/settings'
+import { showToast } from '../base/toastState'
 
 export type VoiceInputStatus = 'idle' | 'recording' | 'transcribing'
 

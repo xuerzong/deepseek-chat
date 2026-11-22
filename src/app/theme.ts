@@ -1,5 +1,5 @@
 import { useSyncExternalStore } from 'react'
-import { useSettings, type ThemePreference } from '../services/settings.js'
+import { useSettings, type ThemePreference } from '../services/settings'
 
 export type Theme = 'light' | 'dark'
 

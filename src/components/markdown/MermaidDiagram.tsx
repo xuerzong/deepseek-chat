@@ -1,7 +1,7 @@
-import { useTranslate } from '../../i18n/index.js'
+import { useTranslate } from '../../i18n/index'
 import { memo, useEffect, useRef, useState } from 'react'
-import { useTheme } from '../../app/theme.js'
-import { renderMermaid } from '../../services/markdown/mermaid.js'
+import { useTheme } from '../../app/theme'
+import { renderMermaid } from '../../services/markdown/mermaid'
 
 /** 流式绘制最新内容、保留上次有效图；回答结束后才显示渲染错误。 */
 export const MermaidDiagram = memo(function MermaidDiagram({

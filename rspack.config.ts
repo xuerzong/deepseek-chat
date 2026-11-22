@@ -23,9 +23,11 @@ type ConfigOptions = {
   devServer?: Configuration['devServer']
 }
 
+const API_ORIGIN = 'https://api.deepseek.com'
+
 /** 创建构建配置，支持自定义 API 地址和开发服务器选项 */
 export const createConfig = ({
-  apiOrigin = 'https://api.deepseek.com',
+  apiOrigin = API_ORIGIN,
   devServer,
 }: ConfigOptions = {}): Configuration => ({
   mode: dev ? 'development' : 'production',
@@ -55,7 +57,12 @@ export const createConfig = ({
     generator: { 'css/module': { localIdentName: '[local]-[hash:6]' } },
     rules: [
       { test: /\.module\.css$/, type: 'css/module', use: [cssLoader] },
-      { test: /\.css$/, exclude: /\.module\.css$/, type: 'css', use: [cssLoader] },
+      {
+        test: /\.css$/,
+        exclude: /\.module\.css$/,
+        type: 'css',
+        use: [cssLoader],
+      },
       {
         test: /\.(j|t)sx?$/,
         exclude: /[\\/]node_modules[\\/]/,
@@ -80,9 +87,15 @@ export const createConfig = ({
       scriptLoading: 'defer',
       meta: { 'application-version': version },
     }),
-    new rspack.DefinePlugin({ __API_ORIGIN__: JSON.stringify(apiOrigin) }),
+    new rspack.DefinePlugin({
+      __API_ORIGIN__: JSON.stringify(apiOrigin),
+      __DEV__: JSON.stringify(dev),
+    }),
     new rspack.CopyRspackPlugin({
-      patterns: [{ from: path.resolve(root, 'LICENSE'), to: 'LICENSE', toType: 'file' }],
+      patterns: [
+        { from: path.resolve(root, 'public'), to: '.' },
+        { from: path.resolve(root, 'LICENSE'), to: 'LICENSE', toType: 'file' },
+      ],
     }),
   ],
   performance: { hints: false },

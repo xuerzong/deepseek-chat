@@ -1,15 +1,15 @@
-import { useTranslate } from '../../i18n/index.js'
+import { useTranslate } from '../../i18n/index'
 import { memo, useEffect, useMemo, useReducer, useState } from 'react'
 import Prism from 'prismjs'
 import {
   getHighlightLang,
   isHighlightLoaded,
   loadHighlight,
-} from '../../services/markdown/highlight.js'
-import { IconCheckOutline16, IconCopyOutline16 } from '../base/icons.js'
-import { showToast } from '../base/toastState.js'
-import { copyText } from '../../utils/clipboard.js'
-import { MermaidDiagram } from './MermaidDiagram.js'
+} from '../../services/markdown/highlight'
+import { IconCheckOutline16, IconCopyOutline16 } from '../base/icons'
+import { showToast } from '../base/toastState'
+import { copyText } from '../../utils/clipboard'
+import { MermaidDiagram } from './MermaidDiagram'
 import styles from './CodeBlock.module.css'
 
 /** 代码块标题栏：左侧语言名，右侧复制 */

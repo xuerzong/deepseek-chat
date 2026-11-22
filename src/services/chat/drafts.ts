@@ -1,6 +1,6 @@
 import { create } from 'zustand'
-import type { TranslationMessage } from '../../i18n/index.js'
-import { createId } from '../../utils/id.js'
+import type { TranslationMessage } from '../../i18n/index'
+import { createId } from '../../utils/id'
 import {
   cancelUpload,
   isImage,
@@ -8,8 +8,8 @@ import {
   uploadAttachment,
   validateFiles,
   type UploadTask,
-} from '../attachments.js'
-import type { FileAttachment } from './types.js'
+} from '../attachments'
+import type { FileAttachment } from './types'
 
 export type DraftAttachment = {
   /** 本地标识，也是 IndexedDB 原件与上传任务的 key */

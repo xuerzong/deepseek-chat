@@ -1,8 +1,8 @@
-import type { ServerToolUseBlock } from '../../api/types.js'
-import { getVisibleMessages, normalizeSession } from '../branches.js'
-import { describeReply } from '../describe.js'
-import type { AssistantMessage, Message, ReplyBlock, Session, UserMessage } from '../types.js'
-import { fail } from './errors.js'
+import type { ServerToolUseBlock } from '../../api/types'
+import { getVisibleMessages, normalizeSession } from '../branches'
+import { describeReply } from '../describe'
+import type { AssistantMessage, Message, ReplyBlock, Session, UserMessage } from '../types'
+import { fail } from './errors'
 import type {
   ChatMessage,
   ChatMessageStatus,
@@ -10,7 +10,7 @@ import type {
   Fragment,
   SessionFile,
   SessionIndexEntry,
-} from './format.js'
+} from './format'
 
 /** 返回图片原件在 ZIP 里的条目名；无原件或非图片附件返回 null，仅导出元数据。 */
 export type ExportImage = (file: { id: string; name: string; isImage: boolean }) => string | null

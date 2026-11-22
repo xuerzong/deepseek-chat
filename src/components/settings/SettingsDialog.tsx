@@ -8,16 +8,11 @@ import {
   IconLightOutline16,
   IconSettingsOutline16,
   IconUploadOutline14,
-} from '../base/icons.js'
-import {
-  BackupError,
-  clearHistory,
-  exportHistory,
-  importHistory,
-} from '../../services/chat/backup.js'
-import { useIsMobile } from '../../app/viewport.js'
-import { useChatStore } from '../../services/chat/store.js'
-import { regionCodes, getRegionName, provinces } from '../../services/location.js'
+} from '../base/icons'
+import { BackupError, clearHistory, exportHistory, importHistory } from '../../services/chat/backup'
+import { useIsMobile } from '../../app/viewport'
+import { useChatStore } from '../../services/chat/store'
+import { regionCodes, getRegionName, provinces } from '../../services/location'
 import {
   isChineseBrowser,
   setLocale,
@@ -26,14 +21,15 @@ import {
   setTtsVoice,
   useSettings,
   type ThemePreference,
-} from '../../services/settings.js'
-import { useTranslate, type TranslationKey, type TranslationMessage } from '../../i18n/index.js'
-import { Button } from '../base/Button.js'
-import { Modal } from '../base/Modal.js'
-import { Select } from '../base/Select.js'
-import { showToast } from '../base/toastState.js'
-import { ApiKeyConfirm, ApiKeyField, useApiKeyEditor } from './ApiKeyField.js'
-import { closeSettings, useSettingsDialog, type SettingsSection } from './settingsDialogState.js'
+} from '../../services/settings'
+import { useTranslate, type TranslationKey, type TranslationMessage } from '../../i18n/index'
+import { Button } from '../base/Button'
+import { Modal } from '../base/Modal'
+import { Select } from '../base/Select'
+import { showToast } from '../base/toastState'
+import { ApiKeyConfirm, ApiKeyField, useApiKeyEditor } from './ApiKeyField'
+import { BaseURLField } from './BaseURLField'
+import { closeSettings, useSettingsDialog, type SettingsSection } from './settingsDialogState'
 import styles from './Settings.module.css'
 
 /**
@@ -103,6 +99,7 @@ const SettingsContent = () => {
             </>
           ) : (
             <>
+              <BaseURLField />
               <ApiKeyField editor={apiKeyEditor} />
               <ImportHistory historyImport={historyImport} disabled={historyBusy} />
               <ExportHistory disabled={historyBusy} />

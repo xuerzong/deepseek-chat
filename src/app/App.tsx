@@ -1,29 +1,29 @@
 import { useEffect } from 'react'
-import { useTranslate } from '../i18n/index.js'
-import { useSettings } from '../services/settings.js'
-import { useIsMobile, useMobileViewport, usePreventPageScroll } from './viewport.js'
+import { useTranslate } from '../i18n/index'
+import { useSettings } from '../services/settings'
+import { useIsMobile, useMobileViewport, usePreventPageScroll } from './viewport'
 import {
   bindChatPersistence,
   initChat,
   retrySaveSessions,
   selectSession,
   useChatStore,
-} from '../services/chat/store.js'
-import { SearchPanel } from '../components/search/SearchPanel.js'
-import { closeSearchPanel } from '../components/search/searchPanelState.js'
-import { SessionView } from '../components/session/SessionView.js'
-import { MobileHeader } from '../components/session/MobileHeader.js'
-import { Welcome } from '../components/session/Welcome.js'
-import { ensureApiKey } from '../components/settings/settingsDialogState.js'
-import { SettingsDialog } from '../components/settings/SettingsDialog.js'
-import { Toast } from '../components/base/Toast.js'
-import { showToast } from '../components/base/toastState.js'
-import { onUploadNotice } from '../services/attachments.js'
-import { Button } from '../components/base/Button.js'
-import { stopReadAloud } from '../services/speech/readAloud.js'
-import { CollapsedSider } from '../components/sider/CollapsedSider.js'
-import { closeMobileSider } from '../components/sider/mobileSiderState.js'
-import { MobileSider, Sider } from '../components/sider/Sider.js'
+} from '../services/chat/store'
+import { SearchPanel } from '../components/search/SearchPanel'
+import { closeSearchPanel } from '../components/search/searchPanelState'
+import { SessionView } from '../components/session/SessionView'
+import { MobileHeader } from '../components/session/MobileHeader'
+import { Welcome } from '../components/session/Welcome'
+import { ensureApiKey } from '../components/settings/settingsDialogState'
+import { SettingsDialog } from '../components/settings/SettingsDialog'
+import { Toast } from '../components/base/Toast'
+import { showToast } from '../components/base/toastState'
+import { onUploadNotice } from '../services/attachments'
+import { Button } from '../components/base/Button'
+import { stopReadAloud } from '../services/speech/readAloud'
+import { CollapsedSider } from '../components/sider/CollapsedSider'
+import { closeMobileSider } from '../components/sider/mobileSiderState'
+import { MobileSider, Sider } from '../components/sider/Sider'
 import styles from './App.module.css'
 
 export const App = () => {

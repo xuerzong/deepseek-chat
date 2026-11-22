@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { useSettings } from '../../services/settings.js'
+import { useSettings } from '../../services/settings'
 
 /** 设置弹窗的分组：通用设置 / 数据管理 */
 export type SettingsSection = 'general' | 'data'

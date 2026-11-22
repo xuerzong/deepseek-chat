@@ -1,12 +1,12 @@
 import { create } from 'zustand'
-import type { LinkedMessage, TranslationMessage } from '../i18n/index.js'
-import { isUploadImageOversized } from '../utils/resizeUploadImage.js'
-import { uploadFile } from './api/client.js'
-import { classifyApiError, getUploadErrorInfo, isRetryableApiError } from './api/errors.js'
-import type { FilePurpose } from './api/types.js'
-import { loadFile } from './chat/db.js'
-import type { FileAttachment } from './chat/types.js'
-import { ACCEPT_FILE_EXTS } from './uploadExts.js'
+import type { LinkedMessage, TranslationMessage } from '../i18n/index'
+import { isUploadImageOversized } from '../utils/resizeUploadImage'
+import { uploadFile } from './api/client'
+import { classifyApiError, getUploadErrorInfo, isRetryableApiError } from './api/errors'
+import type { FilePurpose } from './api/types'
+import { loadFile } from './chat/db'
+import type { FileAttachment } from './chat/types'
+import { ACCEPT_FILE_EXTS } from './uploadExts'
 
 /** 允许上传的扩展名，按扩展名白名单过滤，清单见 uploadExts.ts */
 export const ACCEPTED_EXTS = ACCEPT_FILE_EXTS

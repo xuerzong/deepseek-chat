@@ -1,15 +1,16 @@
 import { create } from 'zustand'
-import type { TtsVoice } from './api/speech.js'
-import { normalizeLocation, type UserLocation } from './location.js'
+import type { TtsVoice } from './api/speech'
+import { normalizeLocation, type UserLocation } from './location'
 
 export type Locale = 'zh-CN' | 'en-US'
 
 /** 主题偏好；默认跟随系统 */
 export type ThemePreference = 'light' | 'dark' | 'system'
 
-/** 本机设置，存 localStorage：API Key、语言、主题、位置、朗读音色、深度思考与智能搜索开关、侧边栏收起状态 */
+/** 本机设置，存 localStorage：API Key、API 基础地址、语言、主题、位置、朗读音色、深度思考与智能搜索开关、侧边栏收起状态 */
 type Settings = {
   apiKey: string | null
+  baseURL: string | null
   locale: Locale
   themePreference: ThemePreference
   location: UserLocation | null
@@ -21,6 +22,7 @@ type Settings = {
 
 const KEYS = {
   apiKey: 'chat-demo:api-key',
+  baseURL: 'chat-demo:base-url',
   locale: 'chat-demo:locale',
   location: 'chat-demo:location',
   themePreference: 'chat-demo:theme-preference',
@@ -48,6 +50,18 @@ const write = (key: string, value: string | null) => {
   } catch {
     // 存储不可用时只在内存中生效
   }
+}
+
+export const normalizeBaseURL = (value: string | null): string | null => {
+  const trimmed = value?.trim().replace(/\/+$/, '') ?? ''
+  if (!trimmed) {
+    return null
+  }
+  const url = new URL(trimmed)
+  if (url.protocol !== 'http:' && url.protocol !== 'https:') {
+    throw new TypeError(`Unsupported API base URL protocol: ${url.protocol}`)
+  }
+  return trimmed
 }
 
 /** 位置选择模式跟随浏览器语言，与应用内选择的界面语言无关。 */
@@ -78,6 +92,14 @@ const initialLocation = (): UserLocation | null => {
   }
 }
 
+const initialBaseURL = (): string | null => {
+  try {
+    return normalizeBaseURL(read(KEYS.baseURL))
+  } catch {
+    return null
+  }
+}
+
 /** 未保存过时跟随系统 */
 const initialThemePreference = (): ThemePreference => {
   const saved = read(KEYS.themePreference)
@@ -89,6 +111,7 @@ const initialTtsVoice = (): TtsVoice => (read(KEYS.ttsVoice) === 'tide' ? 'tide'
 
 export const useSettings = create<Settings>(() => ({
   apiKey: read(KEYS.apiKey),
+  baseURL: initialBaseURL(),
   locale: initialLocale(),
   location: initialLocation(),
   themePreference: initialThemePreference(),
@@ -122,6 +145,12 @@ export const setTtsVoice = (ttsVoice: TtsVoice) => {
 export const setApiKey = (apiKey: string | null) => {
   write(KEYS.apiKey, apiKey)
   useSettings.setState({ apiKey })
+}
+
+export const setBaseURL = (baseURL: string | null) => {
+  const normalized = normalizeBaseURL(baseURL)
+  write(KEYS.baseURL, normalized)
+  useSettings.setState({ baseURL: normalized })
 }
 
 export const setThinking = (thinking: boolean) => {

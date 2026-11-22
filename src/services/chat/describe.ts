@@ -1,6 +1,6 @@
-import { isTranslationKey, translate } from '../../i18n/index.js'
-import { classifyStatus } from '../api/errors.js'
-import type { AssistantMessage } from './types.js'
+import { isTranslationKey, translate } from '../../i18n/index'
+import { classifyStatus } from '../api/errors'
+import type { AssistantMessage } from './types'
 
 export type Notice = {
   text: string

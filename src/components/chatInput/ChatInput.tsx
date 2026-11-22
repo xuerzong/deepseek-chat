@@ -6,10 +6,10 @@ import {
   IconSendOutline16,
   IconStopFill16,
   IconThinkOutline14,
-} from '../base/icons.js'
-import { setSearch, setThinking, useSettings } from '../../services/settings.js'
-import { useIsMobile } from '../../app/viewport.js'
-import { sendMessage, stopReply, useChatStore } from '../../services/chat/store.js'
+} from '../base/icons'
+import { setSearch, setThinking, useSettings } from '../../services/settings'
+import { useIsMobile } from '../../app/viewport'
+import { sendMessage, stopReply, useChatStore } from '../../services/chat/store'
 import {
   addDraftFiles,
   EMPTY_DRAFT,
@@ -19,19 +19,19 @@ import {
   retryDraftAttachment,
   setDraftText,
   useDrafts,
-} from '../../services/chat/drafts.js'
-import { stopReadAloud } from '../../services/speech/readAloud.js'
-import { IconButton } from '../base/IconButton.js'
-import { Tooltip } from '../base/Tooltip.js'
-import { ensureApiKey } from '../settings/settingsDialogState.js'
-import { DragMask, useFileDrop } from './DragMask.js'
-import { showToast } from '../base/toastState.js'
-import { ACCEPT, useUploads } from '../../services/attachments.js'
-import { DraftAttachments } from './DraftAttachments.js'
-import { useVoiceInput } from './useVoiceInput.js'
-import { VoiceButton } from './VoiceButton.js'
-import { Spectrum } from './Spectrum.js'
-import { useTranslate } from '../../i18n/index.js'
+} from '../../services/chat/drafts'
+import { stopReadAloud } from '../../services/speech/readAloud'
+import { IconButton } from '../base/IconButton'
+import { Tooltip } from '../base/Tooltip'
+import { ensureApiKey } from '../settings/settingsDialogState'
+import { DragMask, useFileDrop } from './DragMask'
+import { showToast } from '../base/toastState'
+import { ACCEPT, useUploads } from '../../services/attachments'
+import { DraftAttachments } from './DraftAttachments'
+import { useVoiceInput } from './useVoiceInput'
+import { VoiceButton } from './VoiceButton'
+import { Spectrum } from './Spectrum'
+import { useTranslate } from '../../i18n/index'
 import styles from './ChatInput.module.css'
 
 /** 输入框：自适应高度的文本框 + 文件 + 深度思考与智能搜索开关 + 语音输入 + 发送 / 停止 */

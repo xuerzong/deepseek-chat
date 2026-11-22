@@ -5,7 +5,7 @@ import type {
   MessageStreamEvent,
   OutputBlockStart,
   TextBlockParam,
-} from '../api/types.js'
+} from '../api/types'
 import type {
   AssistantMessage,
   FileAttachment,
@@ -13,7 +13,7 @@ import type {
   ReplyBlock,
   ReplyStatus,
   UserMessage,
-} from './types.js'
+} from './types'
 
 /**
  * 文件按 Files API 的 file_id（附件的 serverId）引用：图片用 image 块，其余用 document 块。
@@ -185,8 +185,7 @@ export const canContinueReply = (reply: AssistantMessage): boolean => {
     return false
   }
   return (
-    reply.status === 'stopped' ||
-    (reply.status === 'done' && reply.stopReason === 'max_tokens')
+    reply.status === 'stopped' || (reply.status === 'done' && reply.stopReason === 'max_tokens')
   )
 }
 

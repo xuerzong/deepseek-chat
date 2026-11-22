@@ -1,9 +1,9 @@
-import { formatDate } from '../../utils/format.js'
-import * as db from './db.js'
-import { replaceHistory, useChatStore } from './store.js'
-import type { Session } from './types.js'
+import { formatDate } from '../../utils/format'
+import * as db from './db'
+import { replaceHistory, useChatStore } from './store'
+import type { Session } from './types'
 
-export { BackupError } from './history/errors.js'
+export { BackupError } from './history/errors'
 
 // 导入、导出与全部删除串行处理，避免读取归档时数据被清空或两个替换事务交错。
 let backupQueue: Promise<unknown> = Promise.resolve()
@@ -33,7 +33,7 @@ export const exportHistory = (): Promise<{ name: string; blob: Blob }> =>
         yield { ...session, ...summary }
       }
     }
-    const { exportArchive } = await import('./history/exportArchive.js')
+    const { exportArchive } = await import('./history/exportArchive')
     const now = new Date()
     const blob = await exportArchive(readSessions())
     return { name: backupFileName(now), blob }
@@ -45,7 +45,7 @@ export const exportHistory = (): Promise<{ name: string; blob: Blob }> =>
  */
 export const importHistory = (file: File): Promise<number> =>
   enqueueBackup(async () => {
-    const { checkArchiveFormat, importArchive } = await import('./history/importArchive.js')
+    const { checkArchiveFormat, importArchive } = await import('./history/importArchive')
     await checkArchiveFormat(file)
     return replaceHistory(() => importArchive(file))
   })

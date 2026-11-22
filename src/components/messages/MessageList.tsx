@@ -1,17 +1,17 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
-import { useIsMobile } from '../../app/viewport.js'
+import { useIsMobile } from '../../app/viewport'
 import {
   buildMessageVersions,
   getVisibleMessages,
   type MessageVersions,
-} from '../../services/chat/branches.js'
-import { selectMessageVersion } from '../../services/chat/store.js'
-import type { Session } from '../../services/chat/types.js'
-import { closeSearchPanel } from '../search/searchPanelState.js'
-import { AssistantMessage } from './AssistantMessage.js'
-import { ScrollToBottomContext } from './scrollContext.js'
-import { UserMessage } from './UserMessage.js'
-import type { Message } from '../../services/chat/types.js'
+} from '../../services/chat/branches'
+import { selectMessageVersion } from '../../services/chat/store'
+import type { Session } from '../../services/chat/types'
+import { closeSearchPanel } from '../search/searchPanelState'
+import { AssistantMessage } from './AssistantMessage'
+import { ScrollToBottomContext } from './scrollContext'
+import { UserMessage } from './UserMessage'
+import type { Message } from '../../services/chat/types'
 
 /**
  * 会话共用可重试的附件上传失败入口，覆盖当前提问与历史消息中的附件。

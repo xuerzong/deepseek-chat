@@ -8,10 +8,10 @@ import type {
   Root,
   Table as TableNode,
 } from 'mdast'
-import { CitationLink } from '../search/CitationLink.js'
-import { CodeBlock } from './CodeBlock.js'
-import { ImageAsLink, Link } from './Link.js'
-import { InlineMath, MathBlock } from './MathFormula.js'
+import { CitationLink } from '../search/CitationLink'
+import { CodeBlock } from './CodeBlock'
+import { ImageAsLink, Link } from './Link'
+import { InlineMath, MathBlock } from './MathFormula'
 
 const Html = memo(function Html({ value }: { value: string }) {
   if (/^<br\s*\/?>$/i.test(value)) {

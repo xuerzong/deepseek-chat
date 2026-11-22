@@ -1,6 +1,6 @@
-import { cityNames, regionCodes, regionNameOverrides, provinceNames } from './locationData.js'
+import { cityNames, regionCodes, regionNameOverrides, provinceNames } from './locationData'
 
-export { regionCodes } from './locationData.js'
+export { regionCodes } from './locationData'
 
 export const provinces = Object.entries(provinceNames).map(([code, name]) => ({
   code,

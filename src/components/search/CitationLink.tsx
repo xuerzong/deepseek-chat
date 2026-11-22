@@ -1,7 +1,7 @@
 import type { MouseEvent } from 'react'
-import type { Source } from '../../services/chat/view.js'
-import { HoverCard, type HoverCardTrigger } from './HoverCard.js'
-import { SourceCard } from './SourceCard.js'
+import type { Source } from '../../services/chat/view'
+import { HoverCard, type HoverCardTrigger } from './HoverCard'
+import { SourceCard } from './SourceCard'
 
 /**
  * 正文里 [citation:N] 的数字角标：悬停预览来源，点击新标签打开。

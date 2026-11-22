@@ -1,4 +1,4 @@
-import type { Message, Session } from './types.js'
+import type { Message, Session } from './types'
 
 /** 将线性消息列表规范化为单分支，保留消息 ID、内容及时间。 */
 export const normalizeSession = (session: Session): Session =>

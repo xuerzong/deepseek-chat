@@ -1,4 +1,4 @@
-import { ApiError } from './client.js'
+import { ApiError } from './client'
 
 /**
  * 接口失败的统一分类。各调用方按自己的场景给同一种情况配不同文案，

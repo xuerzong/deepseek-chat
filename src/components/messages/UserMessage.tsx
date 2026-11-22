@@ -1,22 +1,18 @@
-import { useTranslate } from '../../i18n/index.js'
+import { useTranslate } from '../../i18n/index'
 import clsx from 'clsx'
 import { memo, useLayoutEffect, useRef, useState } from 'react'
-import { useIsMobile } from '../../app/viewport.js'
-import { IconEditOutline16 } from '../base/icons.js'
-import { getFileViewType, isImage } from '../../services/attachments.js'
-import { editMessage, retryUpload } from '../../services/chat/store.js'
-import { stopReadAloud } from '../../services/speech/readAloud.js'
-import type { UserMessage as UserMessageType } from '../../services/chat/types.js'
-import { Button } from '../base/Button.js'
-import { IconButton } from '../base/IconButton.js'
-import { ensureApiKey } from '../settings/settingsDialogState.js'
-import {
-  BranchSwitcher,
-  type MessageVersions,
-  type SelectMessageVersion,
-} from './BranchSwitcher.js'
-import { MessageFile } from './MessageFile.js'
-import { CopyButton } from './CopyButton.js'
+import { useIsMobile } from '../../app/viewport'
+import { IconEditOutline16 } from '../base/icons'
+import { getFileViewType, isImage } from '../../services/attachments'
+import { editMessage, retryUpload } from '../../services/chat/store'
+import { stopReadAloud } from '../../services/speech/readAloud'
+import type { UserMessage as UserMessageType } from '../../services/chat/types'
+import { Button } from '../base/Button'
+import { IconButton } from '../base/IconButton'
+import { ensureApiKey } from '../settings/settingsDialogState'
+import { BranchSwitcher, type MessageVersions, type SelectMessageVersion } from './BranchSwitcher'
+import { MessageFile } from './MessageFile'
+import { CopyButton } from './CopyButton'
 import styles from './UserMessage.module.css'
 
 export const UserMessage = memo(function UserMessage({

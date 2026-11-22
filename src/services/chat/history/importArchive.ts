@@ -1,9 +1,9 @@
-import * as db from '../db.js'
-import { BackupError, fail } from './errors.js'
-import type { SessionIndexEntry } from './format.js'
-import { INDEX_PATH, MANIFEST_PATH, USER_PATH, parseSessionPath, sessionFilesDir } from './paths.js'
-import { checkManifest, readSessionFile, readSessionIndex } from './schema.js'
-import { toLocalSession } from './toLocal.js'
+import * as db from '../db'
+import { BackupError, fail } from './errors'
+import type { SessionIndexEntry } from './format'
+import { INDEX_PATH, MANIFEST_PATH, USER_PATH, parseSessionPath, sessionFilesDir } from './paths'
+import { checkManifest, readSessionFile, readSessionIndex } from './schema'
+import { toLocalSession } from './toLocal'
 import {
   ArchiveError,
   isZipFile,
@@ -11,7 +11,7 @@ import {
   readEntry,
   skipEntry,
   type ArchiveEntry,
-} from './zipReader.js'
+} from './zipReader'
 
 /** 从原件字节补充图片 MIME；无法识别时为空字符串，图片身份仍由归档的 is_image 决定。 */
 const imageType = (bytes: Uint8Array): string => {

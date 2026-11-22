@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import type { LinkedMessage } from '../../i18n/index.js'
+import type { LinkedMessage } from '../../i18n/index'
 
 /** 轻提示：同一时间只显示一条，新的替换旧的，到时自动消失；文案在渲染时按当前语言翻译 */
 type ToastState = { id: number; message: LinkedMessage | string | null }

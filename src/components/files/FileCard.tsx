@@ -1,9 +1,9 @@
 import clsx from 'clsx'
 import type { AnchorHTMLAttributes, ReactNode } from 'react'
-import { useTranslate } from '../../i18n/index.js'
-import { formatSize, getExtension } from '../../services/attachments.js'
-import { IconCloseFill14, IconRefreshOutline16 } from '../base/icons.js'
-import { FileIcon } from './FileIcon.js'
+import { useTranslate } from '../../i18n/index'
+import { formatSize, getExtension } from '../../services/attachments'
+import { IconCloseFill14, IconRefreshOutline16 } from '../base/icons'
+import { FileIcon } from './FileIcon'
 import styles from './FileCard.module.css'
 
 /**

@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import type { ButtonHTMLAttributes, ReactNode } from 'react'
-import { Tooltip, type TooltipPlacement } from './Tooltip.js'
+import { Tooltip, type TooltipPlacement } from './Tooltip'
 import styles from './IconButton.module.css'
 
 /**

@@ -1,33 +1,27 @@
 import { create } from 'zustand'
-import { createId } from '../../utils/id.js'
-import { ApiError, streamMessage } from '../api/client.js'
-import type { ChatModel, CreateMessageRequest } from '../api/types.js'
-import { extractFileIds, getFileErrorCode, isRetryableApiError } from '../api/errors.js'
+import { createId } from '../../utils/id'
+import { ApiError, streamMessage } from '../api/client'
+import type { ChatModel, CreateMessageRequest } from '../api/types'
+import { extractFileIds, getFileErrorCode, isRetryableApiError } from '../api/errors'
 import {
   cancelUpload,
   checkImageFileIds,
   describeUploadError,
   uploadAttachment,
   useUploads,
-} from '../attachments.js'
-import { useSettings } from '../settings.js'
-import { appendBranch, getVisibleMessages, normalizeSession, selectVersion } from './branches.js'
-import * as db from './db.js'
-import {
-  clearAllDrafts,
-  clearDraft,
-  clearSentDraft,
-  getDraft,
-  prepareDraftMessage,
-} from './drafts.js'
-import { createLatestReminder } from './latestReminder.js'
+} from '../attachments'
+import { useSettings } from '../settings'
+import { appendBranch, getVisibleMessages, normalizeSession, selectVersion } from './branches'
+import * as db from './db'
+import { clearAllDrafts, clearDraft, clearSentDraft, getDraft, prepareDraftMessage } from './drafts'
+import { createLatestReminder } from './latestReminder'
 import {
   applyEvent,
   canContinueReply,
   getContextRounds,
   settleReply,
   toRequestMessages,
-} from './reply.js'
+} from './reply'
 import {
   toSessionSummary,
   type AssistantMessage,
@@ -36,7 +30,7 @@ import {
   type Session,
   type SessionSummary,
   type UserMessage,
-} from './types.js'
+} from './types'
 
 /** deepseek-flash 同时支持深度思考与图片输入 */
 const MODEL: ChatModel = 'deepseek-flash'

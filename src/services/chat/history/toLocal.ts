@@ -1,9 +1,5 @@
-import { isWebUrl } from '../../../utils/url.js'
-import type {
-  ServerToolUseBlock,
-  WebFetchResult,
-  WebFetchToolResultBlock,
-} from '../../api/types.js'
+import { isWebUrl } from '../../../utils/url'
+import type { ServerToolUseBlock, WebFetchResult, WebFetchToolResultBlock } from '../../api/types'
 import type {
   AssistantMessage,
   FileAttachment,
@@ -12,10 +8,10 @@ import type {
   ReplyStatus,
   Session,
   UserMessage,
-} from '../types.js'
-import { fail } from './errors.js'
-import type { ChatMessage, FileEntry, Fragment, SessionFile } from './format.js'
-import { sessionFilesDir } from './paths.js'
+} from '../types'
+import { fail } from './errors'
+import type { ChatMessage, FileEntry, Fragment, SessionFile } from './format'
+import { sessionFilesDir } from './paths'
 
 export type LocalSession = {
   session: Session

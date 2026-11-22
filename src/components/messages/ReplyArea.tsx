@@ -1,4 +1,4 @@
-import { useTranslate } from '../../i18n/index.js'
+import { useTranslate } from '../../i18n/index'
 import clsx from 'clsx'
 import { memo, useEffect, useState, type ReactNode } from 'react'
 import {
@@ -13,8 +13,8 @@ import {
   IconSearchOutline16,
   IconSearchWarningOutline16,
   IconThinkOutline16,
-} from '../base/icons.js'
-import type { AssistantMessage } from '../../services/chat/types.js'
+} from '../base/icons'
+import type { AssistantMessage } from '../../services/chat/types'
 import {
   getAreaTitle,
   isDeepSearchKind,
@@ -27,11 +27,11 @@ import {
   type SearchStep,
   type Source,
   type Step,
-} from '../../services/chat/view.js'
-import { Tooltip } from '../base/Tooltip.js'
-import { Markdown } from '../markdown/Markdown.js'
-import { SiteThumbnails } from '../search/SiteLogo.js'
-import { toggleSearchPanel, useSearchPanel } from '../search/searchPanelState.js'
+} from '../../services/chat/view'
+import { Tooltip } from '../base/Tooltip'
+import { Markdown } from '../markdown/Markdown'
+import { SiteThumbnails } from '../search/SiteLogo'
+import { toggleSearchPanel, useSearchPanel } from '../search/searchPanelState'
 import styles from './ReplyArea.module.css'
 import './thinking.markdown.css'
 

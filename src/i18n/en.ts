@@ -1,4 +1,4 @@
-import type { zh } from './zh.js'
+import type { zh } from './zh'
 
 export const en = {
   welcomeMessageChat250808: 'How can I help you?',
@@ -15,6 +15,7 @@ export const en = {
   sessionDeleteFailed: 'Unable to delete this chat. Please try again.',
   settings: 'Settings',
   appName: 'API usage demo',
+  updateAvailable: 'A new version is available. Click OK to refresh.',
   deleteSessionModalContentTitle: 'Delete chat?',
   deleteSessionWithFilesDescription:
     'This chat and its uploaded files will be permanently deleted and cannot be recovered. Delete this chat?',
@@ -104,6 +105,8 @@ export const en = {
   avatarMenuSettingsDialogThemeSelectDarkOption: 'Dark',
   avatarMenuSettingsDialogThemeSelectSystemOption: 'System',
   apiKeyStart: 'Enter an API Key to get started',
+  apiBaseURL: 'API base URL',
+  apiBaseURLInvalid: 'Enter a valid http:// or https:// URL.',
   apiKeyEdit: 'Edit API Key',
   apiKeyPlaceholder: 'Enter API Key',
   apiKeyVerifying: 'Verifying...',

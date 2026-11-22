@@ -1,8 +1,8 @@
-import { useTranslate } from '../../i18n/index.js'
-import { IconCloseOutline16 } from '../base/icons.js'
-import { IconButton } from '../base/IconButton.js'
-import { closeSearchPanel, useSearchPanel } from './searchPanelState.js'
-import { SourceCard } from './SourceCard.js'
+import { useTranslate } from '../../i18n/index'
+import { IconCloseOutline16 } from '../base/icons'
+import { IconButton } from '../base/IconButton'
+import { closeSearchPanel, useSearchPanel } from './searchPanelState'
+import { SourceCard } from './SourceCard'
 import styles from './SearchPanel.module.css'
 
 /** 右侧「搜索结果」面板 */

@@ -1,7 +1,7 @@
 import clsx from 'clsx'
-import { useTranslate } from '../../i18n/index.js'
-import { IconToastError16 } from './icons.js'
-import { useToast } from './toastState.js'
+import { useTranslate } from '../../i18n/index'
+import { IconToastError16 } from './icons'
+import { useToast } from './toastState'
 import styles from './Toast.module.css'
 
 export const Toast = () => {

@@ -1,6 +1,6 @@
-import { translate } from '../../i18n/index.js'
-import { monthKey } from '../../utils/format.js'
-import type { SessionSummary } from './types.js'
+import { translate } from '../../i18n/index'
+import { monthKey } from '../../utils/format'
+import type { SessionSummary } from './types'
 
 const DAY = 86_400_000
 

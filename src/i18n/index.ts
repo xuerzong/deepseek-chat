@@ -1,6 +1,6 @@
-import { useSettings } from '../services/settings.js'
-import { en } from './en.js'
-import { zh } from './zh.js'
+import { useSettings } from '../services/settings'
+import { en } from './en'
+import { zh } from './zh'
 
 export type TranslationKey = keyof typeof zh
 export type TranslationParams = Record<string, string | number>

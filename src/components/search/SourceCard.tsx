@@ -1,7 +1,7 @@
 import clsx from 'clsx'
-import type { Source } from '../../services/chat/view.js'
-import { formatDate } from '../../utils/format.js'
-import { SiteLogo } from './SiteLogo.js'
+import type { Source } from '../../services/chat/view'
+import { formatDate } from '../../utils/format'
+import { SiteLogo } from './SiteLogo'
 import styles from './SourceCard.module.css'
 
 /** 显示为 YYYY/MM/DD；无法解析的日期原样显示 */

@@ -1,4 +1,4 @@
-import { translate, type TranslationKey } from '../../../i18n/index.js'
+import { translate, type TranslationKey } from '../../../i18n/index'
 
 /** 导入导出失败的原因，key 对应界面提示文案。 */
 export class BackupError extends Error {

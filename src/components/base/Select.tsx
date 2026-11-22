@@ -1,8 +1,8 @@
 import clsx from 'clsx'
 import { useState } from 'react'
 import { createPortal } from 'react-dom'
-import { useAnchoredPosition, useDismiss } from './anchored.js'
-import { IconCheckOutline16, IconChevronDownOutline14 } from './icons.js'
+import { useAnchoredPosition, useDismiss } from './anchored'
+import { IconCheckOutline16, IconChevronDownOutline14 } from './icons'
 import styles from './Select.module.css'
 
 export type SelectOption<T extends string> = { value: T; label: string; lang?: string }

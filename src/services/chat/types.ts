@@ -1,5 +1,5 @@
-import type { TranslationMessage } from '../../i18n/index.js'
-import type { ApiErrorKind } from '../api/client.js'
+import type { TranslationMessage } from '../../i18n/index'
+import type { ApiErrorKind } from '../api/client'
 import type {
   ChatModel,
   MessageUsage,
@@ -7,7 +7,7 @@ import type {
   StopDetails,
   StopReason,
   TextCitation,
-} from '../api/types.js'
+} from '../api/types'
 
 /**
  * 消息附件。id 是本地标识（IndexedDB files 表的主键，原件按它存储，所有引用同一 id 的消息共用一份），

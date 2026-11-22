@@ -1,9 +1,9 @@
 import clsx from 'clsx'
 import { useEffect, useId, useRef, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
-import { useTranslate } from '../../i18n/index.js'
-import { IconCloseOutline16 } from './icons.js'
-import { IconButton } from './IconButton.js'
+import { useTranslate } from '../../i18n/index'
+import { IconCloseOutline16 } from './icons'
+import { IconButton } from './IconButton'
 import styles from './Modal.module.css'
 
 /** 当前打开的弹窗，后打开的在末尾；叠放时 Esc 只关闭最上层 */
